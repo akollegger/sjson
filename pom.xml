@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>sjson.json</groupId>
   <artifactId>sjson</artifactId>
-  <packaging>jar</packaging>
+  <packaging>bundle</packaging>
   <version>0.5-SNAPSHOT</version>
   <name>sjson</name>
 
@@ -195,6 +195,10 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+      </plugin>
     </plugins>
     <pluginManagement>
       <plugins>
@@ -211,6 +215,7 @@
           <configuration>
             <instructions>
               <Bundle-RequiredExecutionEnvironment>J2SE-1.5</Bundle-RequiredExecutionEnvironment>
+              <Export-Package>sjson.json.*</Export-Package>
               <_versionpolicy>[$(@),$(version;=+;$(@)))</_versionpolicy>
             </instructions>
           </configuration>
